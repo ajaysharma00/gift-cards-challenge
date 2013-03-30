@@ -15,4 +15,4 @@
 /tmp
 
 # Ignore Gemfile.lock
-/.gitignore
+.gitignore

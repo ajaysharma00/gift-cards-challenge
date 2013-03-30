@@ -1,4 +1,7 @@
 GiftCardsChallenge::Application.routes.draw do
+  resources :gift_cards
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

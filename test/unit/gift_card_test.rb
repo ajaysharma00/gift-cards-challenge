@@ -16,9 +16,9 @@ class GiftCardTest < ActiveSupport::TestCase
   end
 
   test "size of distinct values for a single sender" do
-    senders = GiftCard.senders
+    report = GiftCard.report
 
-    assert_equal 2, senders.size, "The size of sender must be '2'"
+    assert_equal 2, report[:senders].size, "The size of sender must be '2'"
   end
 
 end

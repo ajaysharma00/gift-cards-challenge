@@ -5,7 +5,12 @@ class GiftCard
   field :description, type: String
   field :value, type: BigDecimal
 
-  def self.senders
-    GiftCard.all.distinct(:sender)
+  def self.report
+
+    report = {
+      :senders => GiftCard.all.distinct(:sender)
+    }
+
+    report
   end
 end

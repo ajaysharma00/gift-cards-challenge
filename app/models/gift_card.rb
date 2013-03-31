@@ -7,9 +7,11 @@ class GiftCard
 
   def self.report
 
-    report = {
-      :senders => GiftCard.all.distinct(:sender)
-    }
+    report = {}
+
+    GiftCard.all.distinct(:sender).each do |sender_name|
+      report[sender_name] = {}
+    end
 
     report
   end

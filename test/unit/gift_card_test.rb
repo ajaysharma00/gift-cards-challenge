@@ -23,7 +23,7 @@ class GiftCardTest < ActiveSupport::TestCase
     assert_equal ["Igor", "Paulo"], GiftCard.report.keys, "The keys of GiftCard.report must be 'Igor' and 'Paulo'"
   end
 
-  test "How many times some person has given a gift" do
+  test "How many people some person has given a gift" do
     assert_equal 2, GiftCard.report["Igor"][:qty_friends], "Igor given gifts only for two people"
   end
 

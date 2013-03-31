@@ -24,9 +24,7 @@ class GiftCardTest < ActiveSupport::TestCase
   end
 
   test "How many times some person has given a gift" do
-    report = GiftCard.report
-
-    assert_equal 2, report["Igor"][:qty_friends], "Igor given gifts only for two people"
+    assert_equal 2, GiftCard.report["Igor"][:qty_friends], "Igor given gifts only for two people"
   end
 
 end

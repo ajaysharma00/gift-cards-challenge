@@ -19,4 +19,9 @@ class GiftCard
 
     report
   end
+
+  def self.amount sender_name, receiver_name
+    GiftCard.where( sender: sender_name, receiver: receiver_name ).sum( :value )
+  end
+
 end

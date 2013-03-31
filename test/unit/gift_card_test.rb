@@ -21,4 +21,10 @@ class GiftCardTest < ActiveSupport::TestCase
     assert_equal 2, report.size, "The size of sender must be '2'"
   end
 
+  test "GiftCard.report keys" do
+    report = GiftCard.report
+
+    assert_equal ["Igor", "Paulo"], report.keys, "The keys of GiftCard.report must be 'Igor' and 'Paulo'"
+  end
+
 end

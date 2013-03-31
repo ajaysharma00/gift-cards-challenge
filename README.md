@@ -23,3 +23,6 @@ The report should be a table with tree columns:
 You are free to choose the tools (GEMs) you prefer.
 <br>
 There is no final date for you delivery your solution, although every sooner push in GIthub will be strongly considered.
+
+## What's it needed to run
+It's necessary a **mongo database** to run this project

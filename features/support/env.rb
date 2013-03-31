@@ -5,6 +5,7 @@
 # files.
 
 require 'cucumber/rails'
+require 'selenium-webdriver'
 
 # Capybara defaults to CSS3 selectors rather than XPath.
 # If you'd prefer to use XPath, just uncomment this line and adjust any
@@ -56,3 +57,11 @@ end
 # See https://github.com/cucumber/cucumber-rails/blob/master/features/choose_javascript_database_strategy.feature
 Cucumber::Rails::Database.javascript_strategy = :truncation
 
+Before do |scenario|
+  @driver = Selenium::WebDriver.for :firefox
+  @driver.navigate.to "http://localhost:3000/"
+end
+
+After do |scenario|
+  @driver.quit() unless @driver.nil?
+end

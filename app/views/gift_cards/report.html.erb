@@ -1,0 +1,22 @@
+<h1>Reporting gift_cards</h1>
+
+<table>
+  <tr>
+    <th>Sender</th>
+    <th>Gifts given</th>
+    <th>Spent</th>
+  </tr>
+
+<% @report.keys.each do |sender_name| %>
+  <tr>
+    <td><%= sender_name %></td>
+    <td><%= @report[sender_name][:gifts_given] %></td>
+    <td><%= @report[sender_name][:spent] %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Back', gift_cards_path %>
+

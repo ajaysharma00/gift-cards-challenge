@@ -1,5 +1,6 @@
 GiftCardsChallenge::Application.routes.draw do
   resources :gift_cards
+  match 'report/gift_cards' => 'gift_cards#report'
 
 
   # The priority is based upon order of creation:

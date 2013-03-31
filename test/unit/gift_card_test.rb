@@ -8,6 +8,7 @@ class GiftCardTest < ActiveSupport::TestCase
     GiftCard.new( { :sender => "Igor", :receiver => "Paulo", :descripion => "Gift for his birthday", :value => 3.01 } ).save
     GiftCard.new( { :sender => "Paulo", :receiver => "Jose", :descripion => "Gift for his birthday", :value => 2.99 } ).save
     GiftCard.new( { :sender => "Igor", :receiver => "Maria", :descripion => "Easter", :value => 4.01 } ).save
+    GiftCard.new( { :sender => "Igor", :receiver => "Paulo", :descripion => "He is a good friend", :value => 1.00 } ).save
   end
 
   # called after every single test
@@ -28,11 +29,11 @@ class GiftCardTest < ActiveSupport::TestCase
   end
 
   test "How many gifts some person has given" do
-    assert_equal 2, GiftCard.report["Igor"][:gifts_given], "Igor given two gifts"
+    assert_equal 3, GiftCard.report["Igor"][:gifts_given], "Igor given two gifts"
   end
 
   test "How much money someone spent" do
-    assert_equal 7.02, GiftCard.report["Igor"][:spent], "Igor spent $7.02"
+    assert_equal 8.02, GiftCard.report["Igor"][:spent], "Igor spent $7.02"
   end
 
 end

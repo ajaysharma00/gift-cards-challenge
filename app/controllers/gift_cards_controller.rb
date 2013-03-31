@@ -81,15 +81,4 @@ class GiftCardsController < ApplicationController
     end
   end
 
-  # GET /report/gift_cards
-  # GET /report/gift_cards.json
-  def report
-    @report = GiftCard.report
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @report }
-    end
-  end
-
 end

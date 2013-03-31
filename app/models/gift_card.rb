@@ -3,7 +3,7 @@ class GiftCard
   field :sender, type: String
   field :receiver, type: String
   field :description, type: String
-  field :value, type: BigDecimal
+  field :value, type: Float
 
   def self.report
 

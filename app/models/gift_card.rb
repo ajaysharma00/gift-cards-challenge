@@ -11,7 +11,8 @@ class GiftCard
 
     GiftCard.all.distinct(:sender).each do |sender_name|
       report[sender_name] = {
-        :qty_friends => GiftCard.where( sender: sender_name ).distinct( :receiver ).count
+        :qty_friends => GiftCard.where( sender: sender_name ).distinct( :receiver ).count,
+        :gifts_given => GiftCard.where( sender: sender_name ).count
       }
     end
 

@@ -7,7 +7,7 @@ class GiftCardsControllerTest < ActionController::TestCase
 
   # called before every single test
   setup do
-    @gift_card = GiftCard.new( { :sender => "Igor", :receiver => "Paulo", :descripion => "Presente de aniversario", :value => 3.00 } )
+    @gift_card = GiftCard.new( { :sender => "Igor", :receiver => "Paulo", :descripion => "Gift for his birthday", :value => 3.00 } )
   end
 
   # called after every single test

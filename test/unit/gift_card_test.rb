@@ -36,4 +36,8 @@ class GiftCardTest < ActiveSupport::TestCase
     assert_equal 8.02, GiftCard.report["Igor"][:spent], "Igor spent $7.02"
   end
 
+  test "The amount of money that person has sent to someone" do
+    assert_equal 4.01, GiftCard.spent( "Igor", "Paulo" ), "Igor spent $4.01 sending gifts to Paulo"
+  end
+
 end

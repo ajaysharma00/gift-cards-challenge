@@ -14,17 +14,13 @@ module GC
 
     def check driver, message
       element = find driver
-      fail(ArgumentError.new('Message invalid')) unless message.eql? inner_html( driver, element )
+      fail(ArgumentError.new('Message invalid')) unless message.eql? Util.inner_html( driver, element )
     end
 
     private
 
     def find driver
       driver.find_element(:id, 'notice')
-    end
-
-    def inner_html driver, selenium_element
-      driver.execute_script("return arguments[0].innerHTML;", selenium_element)
     end
 
   end

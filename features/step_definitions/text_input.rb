@@ -29,14 +29,10 @@ module GC
 
       labels = driver.find_elements(:tag_name, "label")
       labels.each do |label|
-        label_found = label if label_name.eql? inner_html( driver, label )
+        label_found = label if label_name.eql? Util.inner_html( driver, label )
       end
 
       label_found
-    end
-
-    def inner_html driver, selenium_element
-      driver.execute_script("return arguments[0].innerHTML;", selenium_element)
     end
 
   end

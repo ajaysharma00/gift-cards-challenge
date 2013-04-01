@@ -1,6 +1,7 @@
 # encoding: utf-8
 
 When /^click on "([^\"]*)"$/ do |link_name|
+  sleep 1
   GC.click_on_link @driver, link_name
 end
 

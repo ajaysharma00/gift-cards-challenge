@@ -7,10 +7,10 @@ end
 module GC
 
   def self.type_on_label driver, content, label
-    Label.new.type driver, content, label
+    TextInput.new.type driver, content, label
   end
 
-  class Label
+  class TextInput
 
     def type driver, content, label_name
       field = find driver, label_name

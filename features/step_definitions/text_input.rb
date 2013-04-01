@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-And /^type "([^\"]*)" on "([^\"]*)" label field$/ do |content, label|
+And /^type "([^\"]*)" on "([^\"]*)" field$/ do |content, label|
   GC.type_on_label @driver, content, label
 end
 

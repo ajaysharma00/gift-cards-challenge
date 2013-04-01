@@ -13,18 +13,23 @@ module GC
   class TextInput
 
     def type driver, content, label_name
-      field = find driver, label_name
-      field.send_keys content
+      text_input = find_text_input driver, label_name
+      text_input.send_keys content
     end
 
     private
 
-    def find driver, label_name
+    def find_text_input driver, label_name
+      label = find_label driver, label_name
+      driver.execute_script("el = arguments[0]; while (el.tagName != 'INPUT') { el = el.nextSibling }; return el;", label)
+    end
+
+    def find_label driver, label_name
       label_found = nil
 
       labels = driver.find_elements(:tag_name, "label")
       labels.each do |label|
-        label_found = label if label_name.eq? inner_html (driver, label)
+        label_found = label if label_name.eql? inner_html( driver, label )
       end
 
       label_found

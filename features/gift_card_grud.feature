@@ -4,7 +4,7 @@ Feature: Gift Cards GRUD
    
   Scenario: Create a gift card
     Given the user on the homepage
-    When click on "Gift Carda"
+    When click on "Gift Cards"
       And click on "New Gift card"
       And type "Igor" on "Sender" field
       And type "Paulo" on "Receiver" field

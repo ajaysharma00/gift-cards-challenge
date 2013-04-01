@@ -12,15 +12,26 @@ module GC
 
   class Label
 
-    def type driver, content, label
-      field = find driver, label
+    def type driver, content, label_name
+      field = find driver, label_name
       field.send_keys content
     end
 
     private
 
-    def find driver, label
-      nil
+    def find driver, label_name
+      label_found = nil
+
+      labels = driver.find_elements(:tag_name, "label")
+      labels.each do |label|
+        label_found = label if label_name.eq? inner_html (driver, label)
+      end
+
+      label_found
+    end
+
+    def inner_html driver, selenium_element
+      driver.execute_script("return arguments[0].innerHTML;", selenium_element)
     end
 
   end
